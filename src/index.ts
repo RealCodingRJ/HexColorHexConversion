@@ -2,12 +2,14 @@ import fs from 'fs';
 
 interface Typed {
     getColorInHex(): void;
+
     convertColorBaseNumber(): void;
 
     createFile(fileName: string, data: string): void
 }
 
-type Conversion = Typed
+type Type = string
+type Conversion = Typed | Type
 
 let colorR = Math.floor(Math.random() * 255);
 let colorG = Math.floor(Math.random() * 255);
@@ -41,6 +43,9 @@ let color = {
 
 let message = `R: ${color.r} G: ${color.g} B: ${color.b} `
 
-conversion.createFile(fileName, message.toString());
-conversion.getColorInHex()
-conversion.convertColorBaseNumber()
+if (typeof conversion == "object") {
+
+    conversion.createFile(fileName, message.toString());
+    conversion.getColorInHex()
+    conversion.convertColorBaseNumber()
+}
