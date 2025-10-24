@@ -25,13 +25,11 @@ const conversion:Conversion = {
         console.log(`R: ${colorR} G: ${colorG} B: ${colorB}`)
     },
 
-
     createFile(fileName: string, data: string) {
 
         fs.writeFileSync(fileName, data.toString());
 
     }
-
 }
 
 const fileName =  "colors.color.col"
